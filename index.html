@@ -8,13 +8,58 @@
 </head>
 <body>
     <div class="front section">
-        <div class="hero"><img src="./odin-lined.png"> SIGN-UP FORM</div>
-        <p class="credits"> Photo by Kristijan Arsov on Unsplash.jpg</p>
+        <div class="hero">
+            <img src="./odin-lined.png" alt="Odin Logo">
+            <span>SIGN-UP FORM</span>
+        </div>
+        <p class="credits">
+            Photo by <a href="https://unsplash.com/@aarsoph" target="_blank" rel="noopener">Kristijan Arsov</a> on Unsplash
+        </p>
     </div>
     <div class="content section">
-        <div class="disclaimer section">disclaimer goes here</div>
-        <div class="form section">form goes here</div>
-        <div class="button section">buttons go here</div>
+        <div class="disclaimer section">
+            <p>This is not a real online service! You know you need something
+                like this in your life to help you realize your deepest dreams. 
+                Sign up <em>now</em> to get started.</p>
+            <p>You <em>know</em> you want to.</p>
+        </div>
+        <div class="form section">
+            <h1>Let's do this</h1>
+            <form id="my-form" action="" method="get">
+                <div class="firstname">
+                    <label for="firstname">First Name</label>
+                    <input type="text" id="firstname" name="firstname" placeholder="Thor" required>
+                </div>
+                <div class="lastname">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" id="lastname" name="lastname" placeholder="Odinsson" required>
+                </div>
+                <div class="email">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="odin@valhalla.com" required>
+                </div>
+                <div class="phone-number">
+                    <label for="phone-number">Phone Number</label>
+                    <input type="tel" id="phone-number" name="phone-number" placeholder="0123456789" required
+                           pattern="[0-9]{10,11}">
+                </div>
+                <div class="password">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="********" required
+                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                </div>
+                <div class="password-confirm">
+                    <label for="password-confirm">Confirm Password</label>
+                    <input type="password" id="password-confirm" name="password-confirm" placeholder="********" required
+                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                </div>
+                <p class="password-hint">Password must be at least 8 characters with uppercase, lowercase, and a number.</p>
+            </form>
+        </div>
+        <div class="button section">
+            <button type="submit" form="my-form">Create Account</button>
+            <p>Already have an account? <a href="#">Log in</a></p>
+        </div>
     </div>
 </body>
 </html>
