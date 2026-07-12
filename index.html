@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="stylesheet.css" rel="stylesheet">
+    <script src="script.js" defer></script>
     <title>Sign-up form</title>
 </head>
 <body>
@@ -25,39 +26,46 @@
         </div>
         <div class="form section">
             <h1>Let's do this</h1>
-            <form id="my-form" action="" method="get">
+            <form id="my-form" action="" novalidate>
                 <div class="firstname">
                     <label for="firstname">First Name</label>
                     <input type="text" id="firstname" name="firstname" placeholder="Thor" required>
+                    <span id="error-firstname" class="error"></span>
                 </div>
                 <div class="lastname">
                     <label for="lastname">Last Name</label>
                     <input type="text" id="lastname" name="lastname" placeholder="Odinsson" required>
+                    <span id="error-lastname" class="error"></span>
                 </div>
                 <div class="email">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="odin@valhalla.com" required>
+                    <input type="email" id="email" name="email" placeholder="odin@valhalla.com" autocomplete="email" required>
+                    <span id="error-email" class="error"></span>
                 </div>
                 <div class="phone-number">
                     <label for="phone-number">Phone Number</label>
                     <input type="tel" id="phone-number" name="phone-number" placeholder="0123456789" required
                            pattern="[0-9]{10,11}">
+                    <span id="error-phone-number" class="error"></span>
                 </div>
                 <div class="password">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="********" required
+                    <input type="password" id="password" name="password" placeholder="********" autocomplete="new-password" required
                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                    <span id="error-password" class="error"></span>
                 </div>
                 <div class="password-confirm">
                     <label for="password-confirm">Confirm Password</label>
-                    <input type="password" id="password-confirm" name="password-confirm" placeholder="********" required
+                    <input type="password" id="password-confirm" name="password-confirm" placeholder="********" autocomplete="new-password" required
                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                    <span id="error-password-confirm" class="error"></span>
                 </div>
                 <p class="password-hint">Password must be at least 8 characters with uppercase, lowercase, and a number.</p>
             </form>
         </div>
         <div class="button section">
             <button type="submit" form="my-form">Create Account</button>
+            <p id="success-message" class="success-message" hidden>High five! Odin has accepted your application.</p>
             <p>Already have an account? <a href="#">Log in</a></p>
         </div>
     </div>
